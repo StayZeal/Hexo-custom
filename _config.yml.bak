@@ -1,12 +1,12 @@
-# Hexo Configuration
+﻿# Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
+title: 咸鱼
+subtitle:技术博客	
+description:记录点滴
+author: 咸鱼
 language:
 timezone:
 
@@ -69,7 +69,8 @@ pagination_dir: page
 #theme: jsimple
 #theme: hiero
 #theme: huxblog
-theme: casual
+#theme: casual
+theme: cactus-dark
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
