@@ -1,0 +1,1 @@
+每次hexo g生成的public文件夹copy到stayzeal.github.io文件夹中（resume文件夹除外）
