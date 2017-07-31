@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 咸鱼
+title: Ado
 subtitle: 技术博客	
 description: 记录点滴
-author: 咸鱼
+author: Ado
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.gofun.co
-root: /blog/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -71,7 +71,8 @@ pagination_dir: page
 #theme: hiero
 #theme: huxblog
 #theme: casual
-theme: cactus-dark
+#theme: cactus-dark
+theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -79,3 +80,22 @@ deploy:
   type:git
   repo:https://github.com/StayZeal/stayzeal.github.io.git
   branch:master
+  
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
