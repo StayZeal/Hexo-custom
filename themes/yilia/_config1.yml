@@ -2,11 +2,11 @@
 
 menu:
   主页: /
-  #随笔: /tags/随笔/
+  #随笔: /
 
 # SubNav
 subnav:
-  #github: "#"
+  #github: "https://github.com/stayzeal"
   #weibo: "#"
   #rss: "#"
   #zhihu: "#"
@@ -28,7 +28,7 @@ rss: /atom.xml
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root: /
+root: 
 
 # Content
 
@@ -73,8 +73,7 @@ avatar: http://img.qqfeizhuliu.com/uploads/2015122411/2015122411594111635.jpg
 #是否开启分享
 share_jia: true
 
-#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
-#不需要使用某项，直接设置值为false，或注释掉
+#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus 不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
 #1、多说
@@ -89,13 +88,6 @@ changyan_conf: false
 
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 disqus: false
-
-#5、Gitment
-gitment_owner: 'StayZeal'       #你的 GitHub ID
-gitment_repo: 'Hexo-custom'          #存储评论的 repo
-gitment_oauth:
-  client_id: 'f8f31b4370cbb4ba6432'           #client ID
-  client_secret: '634c09fa9c5c3686342b69102e3925efee5343c8'       #client secret
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -113,7 +105,7 @@ slider:
 # 如不需要，将该对应项置为false
 # 比如
 #smart_menu:
-#  friends: false
+  friends: false
 smart_menu:
   innerArchive: '所有文章'
   friends: '友链'
