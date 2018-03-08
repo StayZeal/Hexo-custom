@@ -2,7 +2,7 @@
 
 menu:
   主页: /
-  随笔: /
+  #随笔: /
 
 # SubNav
 subnav:
@@ -65,7 +65,7 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: /favicon.png
+favicon: /img/favicon.ico
 
 #你的头像url
 avatar: http://img.qqfeizhuliu.com/uploads/2015122411/2015122411594111635.jpg
