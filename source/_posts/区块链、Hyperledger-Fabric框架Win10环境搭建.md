@@ -14,6 +14,7 @@ tags:
 3、没有Mac，Linux没装
 需要：Docker，Node.js，Git bash，Go环境
 ```
+<!--more-->
 从git仓库中下载官方实例源码：
 ```
 git clone -b master https://github.com/hyperledger/fabric-samples.git

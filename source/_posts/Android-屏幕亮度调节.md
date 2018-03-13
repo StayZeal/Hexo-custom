@@ -1,10 +1,11 @@
----
+﻿---
 title: Android 屏幕亮度调节
 date: 2017-02-22 17:32:58
 tags:
 ---
 Android屏幕亮度调节分两种：
 1.调节当前Activity的亮度，当退出该Activity就可以恢复到系统默认亮度。
+<!--more-->
 
 ```java
 Window window = getWindow();
