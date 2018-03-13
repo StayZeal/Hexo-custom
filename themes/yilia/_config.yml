@@ -3,6 +3,7 @@
 menu:
   主页: /
   #随笔: /tags/随笔/
+  CSDN: http://blog.csdn.net/authork
 
 # SubNav
 subnav:
