@@ -4,6 +4,7 @@ menu:
   主页: /
   #随笔: /tags/随笔/
   CSDN: http://blog.csdn.net/authork
+  关于我: /about/me.html
 
 # SubNav
 subnav:
@@ -118,7 +119,7 @@ slider:
 smart_menu:
   innerArchive: '所有文章'
   friends: '友链'
-  aboutme: '关于我'
+  #aboutme: '关于我'
 
 friends:
   CSDN博客地址: http://blog.csdn.net/authork
@@ -128,6 +129,6 @@ friends:
   #友情链接5: http://localhost:4000/
   #友情链接6: http://localhost:4000/
 
-aboutme: 
-  Android程序员<br>
-  543294760@qq.com
+aboutme: /about/me.html
+  #Android程序员<br>
+  #543294760@qq.com
