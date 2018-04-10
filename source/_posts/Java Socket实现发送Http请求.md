@@ -2,9 +2,9 @@
 title: Java Socket实现发送Http请求
 date: 2018-04-01 17:32:58
 tags:
-     - java
-     - socket
-     - post
+     - Java
+     - Socket
+     - Post
 ---
 博客地址：http://blog.stayzeal.cn
 

@@ -2,9 +2,9 @@
 title: Java Scoket实现Http服务器处理Post请求
 date: 2018-03-29 17:32:58
 tags:
-     - java
-     - socket
-     - post
+     - Java
+     - Socket
+     - Post
 ---
 博客地址：http://blog.stayzeal.cn
 
