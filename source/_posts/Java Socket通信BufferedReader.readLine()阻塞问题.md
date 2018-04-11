@@ -36,7 +36,12 @@ out.closed();//但是再也收不到服务端的返回结果（报如下异常�
 //err
 java.net.SocketException: Socket is closed
 ```
-PS：以上关闭输出流，Socket为什么会关闭，这点还不是很清楚。
+原因：
+```
+//Java doc
+Closing the returned OutputStream will close the associated socket.
+
+```
 
 # 解决方案：
 ```
@@ -59,10 +64,11 @@ readline()阻塞原因有两种：
 在写开头两篇博客的时候发现了readline()的阻塞问题，但是搜索网上发现写法都比较类似，没有相关的解决方案。所以就打算使用`while ((str = buff.readLine())!=null&&str.length>0)`来解决问题，但是用Okhttp3却没有这个问题。这让我很费解，通过上网搜索，也知道可以通过关闭流来解决问题，但是关闭了流之后，又报异常。无奈只好Debug调试Okhttp3的代码，幸好之前对Okhttp3和Okio源码有点了解，结果发现Okhttp3就是通过关闭流来解决的。
 ```
 //public final class CallServerInterceptor implements Interceptor
-        Sink requestBodyOut = httpCodec.createRequestBody(request, request.body().contentLength());
-        BufferedSink bufferedRequestBody = Okio.buffer(requestBodyOut);
-        request.body().writeTo(bufferedRequestBody);
-        bufferedRequestBody.close();
+
+Sink requestBodyOut = httpCodec.createRequestBody(request, request.body().contentLength());
+BufferedSink bufferedRequestBody = Okio.buffer(requestBodyOut);
+request.body().writeTo(bufferedRequestBody);
+bufferedRequestBody.close();
 ```
 那么只好硬着头皮搜索`java socket outputStream 关闭`，结果这次是正确的打开方式了。网上千遍一律的博客还是有用的，最起码大家都这么说，说明是正确的，根据你获取的信息，继续寻找你的方向才是问题的解决之道。
 
