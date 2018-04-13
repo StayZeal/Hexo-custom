@@ -8,7 +8,7 @@ tags:
 博客地址：http://blog.stayzeal.cn
 
 Android主线程（UI线程）不能进行耗时操作，所以耗时操作要放到其他线程中，方法有以下几种：
-- Thread/Runbale方式
+- Thread/Runable方式
 - AsyncTask方式
 - HandlerThread方式
 - 线程池方式
@@ -20,13 +20,13 @@ Android主线程（UI线程）不能进行耗时操作，所以耗时操作要�
 第二种，继承AsyncTask，通过`new AsyncTask().excute()`实现，方便进行UI操作。
 AsyncTask内部也是使用线程池来创建线程。
 
-第三种，实例化HandlerThread()类：
+第三种，实例化HandlerThread类：
 ```
 HandlerThread handlerThread = new HandlerThread ("test-1");
 handlerThread.start();
 
 Handler handler = new Handler(handlerThread.getLooper()) ;
-       handler.post(new Runnable() {
+handler.post(new Runnable() {
            @Override
            public void run() {
                //do something
