@@ -53,7 +53,7 @@ socket.close();
 outputStreamWriter.close();
 bufferedReader.close();
 ```
-总结一下：以上`Socket`连理连接，发送数据，接收数据，关闭`Socket`的连接。OkHttp就是对上述过程进行了封装优化，功能进行了丰富（包括复用连接，Gzip，Cookie，Cache，Https，Http 2.0，WebScoket，断线重连，超时机制等）
+总结一下：以上`Socket`建立连接，发送数据，接收数据，关闭`Socket`的连接。OkHttp就是对上述过程进行了封装优化，功能进行了丰富（包括复用连接，Gzip，Cookie，Cache，Https，Http 2.0，WebScoket，断线重连，超时机制等）
 
 ##### 二、OkHttp是怎么做的：
 1、获取Socket连接：
