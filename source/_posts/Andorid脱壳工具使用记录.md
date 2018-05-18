@@ -2,7 +2,8 @@
 title: Andorid脱壳工具使用记录
 date: 2018-04-11 17:32:58
 tags:
-     - Java
+     - Android
+     - 反编译
 ---
 博客地址：[http://blog.stayzeal.cn-时光机](http://blog.stayzeal.cn)
 
