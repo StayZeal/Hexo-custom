@@ -13,7 +13,7 @@ tags:
 #### 问题描述：
 
 `java`类实现` activiti`提供的`JavaDelegate`接口时，获取不到`spring`给我们加载的bean类，会报` java.lang.NullPointerException`；
-
+<!--more-->
 #### 解决如下：
 
 当使用 `activiti:class` 把一个`class`指定给`ServiceTask`时,需要实现`JavaDelegate`接口，`activiti`引擎将会在内部用`Class.newInstance(..)`方法创建一个该类的对象，这个对象并不`spring`容器管理，所以无法获取`spring`容器给我们生成的`bean`；
