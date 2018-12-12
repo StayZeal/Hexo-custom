@@ -1,6 +1,6 @@
 #!/bin/sh
 gen=`hexo g`
-add=`git add`
+add=`git add .`
 commit=`git commit -m"a"`
 push=`git push`
 copy=`mv ./source/_posts ../stayzeal.github.io`
