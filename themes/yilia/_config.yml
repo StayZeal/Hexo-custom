@@ -3,7 +3,7 @@
 menu:
   主页: /
   #随笔: /tags/随笔/
-  关于我: /about/me.html
+  #关于我: /about/me.html
 
 # SubNav
 subnav:
