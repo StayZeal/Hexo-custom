@@ -61,7 +61,7 @@ Android 9 引入了一项新的电池管理功能，即应用待机群组。 应
 public static final int STANDBY_BUCKET_EXEMPTED = 5;
 ```
 查看该成员变量注释猜测就是白名单：`STANDBY_BUCKET_EXEMPTED`。所以我们通过查看在哪使用了这个变量，就可以推断在哪里加入了白名单。
-返回frameworks目录执行：`ag STANDBY_BUCKET_EXEMPTED`，在查找结果中发现这个应该是我们要查找的引用位置，因为其他结果不是作比较就是Test类：
+返回frameworks目录执行：`ag STANDBY_BUCKET_EXEMPTED`，在查找结果中发现这个应该是我们要查找的引用位置，因为其他结果不是做比较就是Test类：
 ```
 base/services/usage/java/com/android/server/usage/AppStandbyController.java
 40:import static android.app.usage.UsageStatsManager.STANDBY_BUCKET_EXEMPTED;
@@ -99,7 +99,7 @@ private void checkAndUpdateStandbyState(String packageName, @UserIdInt int userI
         ...
 }
 ```
-分析代码，在`isAppSpecial`变量为`true`时，才会这是白名单，接下来我们看 `final boolean isSpecial = isAppSpecial(packageName,UserHandle.getAppId(uid),userId);`相关代码：
+分析代码，在`isAppSpecial`变量为`true`时，才会设置白名单，接下来我们看 `final boolean isSpecial = isAppSpecial(packageName,UserHandle.getAppId(uid),userId);`的相关代码：
 ```
 /** Returns true if this app should be whitelisted for some reason, to never go into standby */
     boolean isAppSpecial(String packageName, int appId, int userId) {
@@ -148,7 +148,7 @@ private void checkAndUpdateStandbyState(String packageName, @UserIdInt int userI
         }
 
 ```
-重点看mInjector.isPowerSaveWhitelistExceptIdleApp(packageName)代码：
+重点看`mInjector.isPowerSaveWhitelistExceptIdleApp(packageName)`的实现代码：
 ```
 boolean isPowerSaveWhitelistExceptIdleApp(String packageName) throws RemoteException {
          return mDeviceIdleController.isPowerSaveWhitelistExceptIdleApp(packageName);
@@ -223,9 +223,9 @@ public PowerWhitelistBackend(Context context) {
 
 总结：
 ===
-以上我们分析了应用待机群组的源码，以及找到了添加白名单方式(只有和系统签名相同App才能通过代码添加)：
+以上我们分析了应用待机群组的源码，以及找到了添加白名单方式：
 ```
-android.Manifest.permission.DEVICE_POWER//需要权限
+android.Manifest.permission.DEVICE_POWER//需要权限，需要和系统签名相同的App才能申请此权限
 IDeviceIdleController mDeviceIdleController = IDeviceIdleController.Stub.asInterface(
                 ServiceManager.getService(Context.DEVICE_IDLE_CONTROLLER));
 mDeviceIdleController.addPowerSaveWhitelistApp(getPackageName());
